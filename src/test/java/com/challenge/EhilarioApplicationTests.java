@@ -27,17 +27,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class EhilarioApplicationTests {
 
-//	@Autowired
-//	private MockMvc mvc;
+	@Autowired
+	private MockMvc mvc;
 	@Autowired
 	Multiples multiples;
 
-//	@Test
-//	public void getHello() throws Exception {
-//		mvc.perform(MockMvcRequestBuilders.get("/get").accept(MediaType.APPLICATION_JSON))
-//				.andExpect(status().isOk())
-//		       .andExpect(content().string(equalTo("Greetings from Spring Boot!")));
-//	}
+	@Test
+	public void getHello() throws Exception {
+		mvc.perform(MockMvcRequestBuilders.get("/get?start=1&end=3").accept(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+	}
 
 
 
